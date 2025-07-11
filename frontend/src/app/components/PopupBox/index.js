@@ -47,8 +47,10 @@ function PopupBox() {
             <div className={styles.loaderContainer}>
               <ClipLoader />
               <h1>
-                Using Render's free plan — the backend sleeps after 15 minutes
-                of inactivity, causing a brief delay on the request.
+                <p>
+                  Using Render&apos;s free plan — the backend sleeps after 15
+                  minutes of inactivity, causing a brief delay on the request.
+                </p>
               </h1>
             </div>
           ) : (
