@@ -77,8 +77,8 @@ const ConsultationForm = () => {
           </form>
         </div>
         <div className={styles.imageBox}>
-          <img src="/doctor.webp" alt="Specialist" />
-        </div>{" "}
+          <img src="/Doctor.webp" alt="Specialist" />
+        </div>
       </div>
     </section>
   );
