@@ -37,13 +37,20 @@ function PopupBox() {
     <Popup
       modal
       open={isPopup}
+      closeOnDocumentClick={!loading}
       className={styles.popupContainer}
       overlayStyle={{ background: "rgba(0, 0, 0, 0.6)" }}
       onClose={() => setIsPopup(false)}>
       {
         <form className={styles.form} onSubmit={handleSubmit}>
           {loading ? (
-            <ClipLoader />
+            <div className={styles.loaderContainer}>
+              <ClipLoader />
+              <h1>
+                Using Render's free plan — the backend sleeps after 15 minutes
+                of inactivity, causing a brief delay on the request.
+              </h1>
+            </div>
           ) : (
             <>
               <button
