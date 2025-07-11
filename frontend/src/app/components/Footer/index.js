@@ -24,6 +24,7 @@ export default function Footer() {
             className={styles.logo}
           />
         </div>
+        
 
         <div className={styles.contactBox} >
           <h4>Contact</h4>
