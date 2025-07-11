@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
@@ -9,6 +11,9 @@ import WhyAINU from "./components/WhyAINU";
 import ServicesSection from "./components/ServicesSection";
 import MeetTheBestAndrology from "./components/MeetTheBestAndrology";
 import FAQ from "./components/FAQ";
+import NextContext from "./context/NextContext";
+import { useState } from "react";
+import PopupBox from "./components/PopupBox";
 
 const data = [
   {
@@ -38,19 +43,26 @@ hands at AINU.`,
 ];
 
 export default function Home() {
+  const [isPopup, setIsPopup] = useState(true);
+
+  console.log(isPopup, "isopup")
+
   return (
-    <div className={styles.page}>
-      <Navbar />
-      <div className={styles.content}>
-        <Header />
-        <ConsultationForm />
-        <AboutAndrology details={data[0]} />
-        <WhyAINU />
-        <ServicesSection />
-        <MeetTheBestAndrology details={data[1]} />
-        <FAQ />
+    <NextContext.Provider value={{ isPopup, setIsPopup }}>
+      <PopupBox />
+      <div className={styles.page}>
+        <Navbar />
+        <div className={styles.content}>
+          <Header />
+          <ConsultationForm />
+          <AboutAndrology details={data[0]} />
+          <WhyAINU />
+          <ServicesSection />
+          <MeetTheBestAndrology details={data[1]} />
+          <FAQ />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </NextContext.Provider>
   );
 }

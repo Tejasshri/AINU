@@ -1,8 +1,34 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.css";
+import useFormSubmit from "@/app/hooks/useFormSubmit";
+import webUrl from "@/app/config/url";
 
 const ConsultationForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    date: "",
+    message: "",
+  });
+
+  const { submitForm, loading, error, response } = useFormSubmit(
+    `${webUrl}/api/form-submit`
+  );
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await submitForm(formData);
+    if (!error) {
+      // Optionally reset
+      setFormData({ name: "", phone: "", date: "", message: "" });
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
   return (
     <section className={styles.container}>
       <div className={styles.innerContainer}>
@@ -10,17 +36,44 @@ const ConsultationForm = () => {
           <h2>Book a Consultation with Our Specialist</h2>
           <form>
             <div className={styles.formFields}>
-              <input type="text" placeholder="Full Name" />
-              <input type="tel" placeholder="Mobile Number" />
-              <input type="date" placeholder="Appointment Date" />
-              <input type="text" placeholder="Message" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Mobile Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="date"
+                name="date"
+                placeholder="Appointment Date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="message"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
+              />
             </div>
 
             <p className={styles.privacyNote}>
               *Your information is 100% private and confidential. We respect
               your privacy.
             </p>
-            <button type="submit">Book an Appointment</button>
+            <button onClick={handleSubmit} type="submit">Book an Appointment</button>
           </form>
         </div>
         <div className={styles.imageBox}>

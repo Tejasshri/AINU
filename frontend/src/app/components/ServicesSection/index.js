@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./index.module.css";
 
 import stylesAboutAndrology from "../AboutAndrology/index.module.css";
+import NextContext from "@/app/context/NextContext";
 
 const services = [
   {
@@ -120,6 +121,7 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { setIsPopup } = useContext(NextContext);
   return (
     <section className={styles.section}>
       <h2 className={styles.heading}>
@@ -141,7 +143,9 @@ const ServicesSection = () => {
         ))}
       </div>
       <h2 className={styles.headingSecond}>Struggling with Any of These</h2>
-      <button className="common-btn">Get Treated Now</button>
+      <button onClick={() => setIsPopup(true)} className="common-btn">
+        Get Treated Now
+      </button>
     </section>
   );
 };

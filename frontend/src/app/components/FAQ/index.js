@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import styles from "./index.module.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import NextContext from "@/app/context/NextContext";
 
 const faqs = [
   {
@@ -30,9 +31,10 @@ const faqs = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const answerRefs = useRef([]);
+  const { setIsPopup } = useContext(NextContext);
 
   const toggleFAQ = (index) => {
-    setOpenIndex(prev => (prev === index ? null : index));
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -42,9 +44,15 @@ export default function FAQ() {
         <div className={styles.faqBox}>
           {faqs.map((faq, index) => (
             <div key={index} className={styles.faqItem}>
-              <button className={styles.question} onClick={() => toggleFAQ(index)}>
-                <span>{index + 1}. {faq.question}</span>
-                <span>{openIndex === index ? <FaAngleUp /> : <FaAngleDown />}</span>
+              <button
+                className={styles.question}
+                onClick={() => toggleFAQ(index)}>
+                <span>
+                  {index + 1}. {faq.question}
+                </span>
+                <span>
+                  {openIndex === index ? <FaAngleUp /> : <FaAngleDown />}
+                </span>
               </button>
 
               {/* Smooth expand/collapse */}
@@ -59,8 +67,7 @@ export default function FAQ() {
                   opacity: openIndex === index ? 1 : 0,
                   overflow: "hidden",
                   transition: "all 0.4s ease",
-                }}
-              >
+                }}>
                 <div>{faq.answer}</div>
               </div>
             </div>
@@ -69,7 +76,9 @@ export default function FAQ() {
 
         <div className={styles.bottomBox}>
           <p className={styles.moreText}>Got More Questions?</p>
-          <button className="common-btn">Speak to Our Experts Today</button>
+          <button onClick={() => setIsPopup(true)} className="common-btn">
+            Speak to Our Experts Today
+          </button>
         </div>
       </div>
     </div>

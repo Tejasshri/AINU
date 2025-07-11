@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./index.module.css";
+import NextContext from "@/app/context/NextContext";
 
 const MeetTheBestAndrology = (props) => {
+  const {setIsPopup} = useContext(NextContext)
   const { details } = props;
   const { title, des1, des2, title2, btnText, imgUrl, top } = details;
   return (
@@ -12,7 +14,7 @@ const MeetTheBestAndrology = (props) => {
         <p className={styles.description}>{des2}</p>
         <div className={styles.cta}>
           <p>{title2}</p>
-          <button>{btnText}</button>
+          <button onClick={() => setIsPopup(true)}>{btnText}</button>
         </div>
       </div>
       <div className={styles.imageBox}>

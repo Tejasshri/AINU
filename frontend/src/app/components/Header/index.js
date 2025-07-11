@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./index.module.css";
 import { FaRegHeart } from "react-icons/fa";
+import NextContext from "@/app/context/NextContext";
 
 function Header() {
+  const {setIsPopup} = useContext(NextContext)
   return (
     <header className={styles.header}>
       <div className={styles.content}>
@@ -17,7 +19,7 @@ function Header() {
           Proven safe and advanced treatments for male infertility, erectile
           dysfunction, and more.
         </p>
-        <button className={styles.button}>
+        <button onClick={() => setIsPopup(true)} className={styles.button}>
           Consult Our Top Andrologist Today
         </button>
       </div>
