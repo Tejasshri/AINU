@@ -79,8 +79,14 @@
 
 @media screen and (min-width: 768px) {
   .cancelButton {
-    top: 0.3rem;
+    top: 0.2rem;
+    right:  0.15rem;
     font-size: 0.5rem;
+    background-color: brown;
+    color: white;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
   }
 
   .form {
