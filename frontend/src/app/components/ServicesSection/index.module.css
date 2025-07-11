@@ -1,0 +1,74 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(241, 238, 238);
+  padding: 1rem 0;
+}
+
+.heading {
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.heading::before {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 0.08rem;
+  background-color: #ea3956;
+  margin-bottom: 0.2rem;
+  position: absolute;
+  left: 6.5rem;
+  bottom: -0.4rem;
+}
+
+.titleDescription {
+  font-size: 0.45rem;
+  font-weight: 400;
+  margin: 0.6rem 0;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.card {
+  width: 8.2rem;
+  background-color: white;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.25rem;
+  /* height: 4rem; */
+}
+
+.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: brown;
+  margin-bottom: 0.3rem;
+}
+
+.title {
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 0.45rem;
+  margin-top: 0.1rem;
+}
+
+.headingSecond {
+  font-size: .6rem;
+  font-weight: 500;
+  margin-top: .5rem;
+}
+

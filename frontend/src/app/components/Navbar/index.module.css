@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+  padding: 0.2rem 1rem;
+}
+.navLogoLink {
+}
+
+.navLogoLink img {
+  height: 1.4rem;
+}
+.navLogoCallBtn {
+  background-color: brown;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navCallIcon{
+  margin-right: .1rem;
+}

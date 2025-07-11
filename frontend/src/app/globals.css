@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 5.31vw;
+  height: 100%;
+  /* border: 4px solid violet; */
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 2.76vw;
+  }
+}
+
+body {
+  /* border: 5px solid green; */
+  height: 100%;
+}
+
+* {
+  /* border: 1px solid red; */
+}
+
+.common-btn {
+  font-size: 0.4rem;
+  padding: 0.4rem 1rem;
+  background: #ea3956;
+  color: white;
+  border: none;
+  border-radius: 0.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}

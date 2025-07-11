@@ -1,0 +1,96 @@
+.footer {
+  background-color: white;
+  padding: 0.566rem 0.377rem; /* 30px 20px */
+  text-align: center;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer > .topSection {
+  max-width: 11.321rem; /* 600px */
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.logoBox {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 4rem; /* 120px */
+  margin-bottom: 0.151rem; /* 8px */
+}
+
+.tagline {
+  font-size: 0.226rem; /* 12px */
+  color: #555;
+}
+
+.contactBox,
+.socialBox {
+  width: 2.5rem;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.contactBox h4,
+.socialBox h4 {
+  color: #981b37;
+  font-weight: bold;
+  margin-bottom: 0.113rem; /* 6px */
+  text-decoration: underline;
+  font-size: 0.5rem;
+}
+
+.contactBox p {
+  font-size: 0.264rem; /* 14px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.113rem; 
+  cursur: pointer;
+}
+
+.circleCall {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #981b37;
+  color: white;
+  font-size: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #981b37;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.264rem; /* 14px */
+  justify-content: center;
+  font-size: 0.34rem; /* 18px */
+  color: #981b37;
+}
+
+.divider {
+  margin: 0.377rem 0 0.188rem; /* 20px 0 10px */
+  border: none;
+  border-top: 1px solid #999;
+  width: 25rem;
+}
+
+.bottomText {
+  font-size: 0.3rem; /* 13px */
+  color: #444;
+}

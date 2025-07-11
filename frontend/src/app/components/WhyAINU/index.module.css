@@ -1,0 +1,44 @@
+.container {
+  background: unset;
+  background-color: #fef1ed;
+}
+
+.container .leftBox {
+  width: 50% !important;
+}
+
+.left {
+}
+
+.heading {
+  width: 15rem;
+}
+
+.description {
+  width: 13rem;
+}
+
+.button {
+}
+
+.right {
+  padding: 0.3rem 0 0 2rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.list li {
+  display: flex;
+  font-size: 0.4rem;
+}
+
+.list li img {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.2rem;
+}

@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 1rem 0;
+  background: linear-gradient(to right, white 60%, rgba(0,0,0,.1));
+  height: 12rem;
+}
+
+.textBox {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-size: 0.8rem;
+  position: relative;
+}
+.heading::before {
+  content: "";
+  width: 6rem;
+  height: 0.05rem;
+  background-color: #ea3956;
+  position: absolute;
+  bottom: -0.2rem;
+}
+
+.description {
+  font-size: 0.4rem;
+  line-height: 1.5;
+}
+
+.cta {
+  font-size: 0.55rem;
+}
+
+.cta button {
+  font-size: 0.4rem;
+  padding: 0.4rem 1rem;
+  background: #EA3956;
+  color: white;
+  border: none;
+  border-radius: .15rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: start;
+  margin-top: 0.5rem;
+}
+
+.imageBox {
+  flex-grow: 1;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+  /* border: 1px solid red; */
+    object-fit: contain;
+}
+
+.imageBox img {
+    width: 120%;
+    /* height: 100%; */
+    position: relative;
+    top: -1.5rem;
+    /* border: 1px solid red; */
+    object-fit: contain;
+}
