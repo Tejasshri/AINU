@@ -16,6 +16,14 @@ function useFormSubmit(url) {
         return;
       }
     }
+
+    // ✅ Mobile number validation
+    const mobileRegex = /^[0-9]{10}$/; // Adjust as per your requirement
+    if (!mobileRegex.test(formData.mobile)) {
+      alert("Please enter a valid 10-digit mobile number");
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setResponse(null);
