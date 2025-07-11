@@ -10,6 +10,12 @@ function useFormSubmit(url) {
   const router = useRouter();
 
   const submitForm = async (formData) => {
+    for (let field in formData) {
+      if (!formData[field]) {
+        alert(`Please fill in the ${field} field`);
+        return;
+      }
+    }
     setLoading(true);
     setError(null);
     setResponse(null);
