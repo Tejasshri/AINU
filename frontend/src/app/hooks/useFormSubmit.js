@@ -13,7 +13,8 @@ function useFormSubmit(url) {
     for (let field in formData) {
       if (!formData[field]) {
         alert(`Please fill in the ${field} field`);
-        return;
+        throw new Error(`Please fill in the ${field} field`);
+   
       }
     }
 
@@ -21,7 +22,8 @@ function useFormSubmit(url) {
     const mobileRegex = /^[0-9]{10}$/; // Adjust as per your requirement
     if (!mobileRegex.test(formData.mobile)) {
       alert("Please enter a valid 10-digit mobile number");
-      return;
+      throw new Error("Please enter a valid 10-digit mobile number");
+
     }
 
     setLoading(true);
