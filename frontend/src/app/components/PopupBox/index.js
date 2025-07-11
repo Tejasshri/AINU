@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 import NextContext from "@/app/context/NextContext";
 import useFormSubmit from "@/app/hooks/useFormSubmit";
 import webUrl from "@/app/config/url";
-import { TailSpin } from "react-loader-spinner";
+import { ClipLoader } from "react-spinners";
 
 function PopupBox() {
   const { isPopup, setIsPopup } = useContext(NextContext);
@@ -43,7 +43,7 @@ function PopupBox() {
       {
         <form className={styles.form} onSubmit={handleSubmit}>
           {loading ? (
-            <TailSpin height={30} width={30} />
+            <ClipLoader />
           ) : (
             <>
               <button
@@ -89,7 +89,10 @@ function PopupBox() {
                   className={styles.textarea}
                   placeholder="Message"
                 />
-                <button type="submit" className={styles.submitButton}>
+                <button
+                  disabled={loading}
+                  type="submit"
+                  className={styles.submitButton}>
                   Request a Callback
                 </button>
               </div>

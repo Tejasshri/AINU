@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./index.module.css";
 import useFormSubmit from "@/app/hooks/useFormSubmit";
 import webUrl from "@/app/config/url";
+import { ClipLoader } from "react-spinners";
 
 const ConsultationForm = () => {
   const [formData, setFormData] = useState({
@@ -68,12 +69,17 @@ const ConsultationForm = () => {
                 onChange={handleChange}
               />
             </div>
-
             <p className={styles.privacyNote}>
               *Your information is 100% private and confidential. We respect
               your privacy.
             </p>
-            <button onClick={handleSubmit} type="submit">Book an Appointment</button>
+            {loading ? (
+              <ClipLoader size={20} />
+            ) : (
+              <button onClick={handleSubmit} disabled={loading} type="submit">
+                Book an Appointment
+              </button>
+            )}
           </form>
         </div>
         <div className={styles.imageBox}>

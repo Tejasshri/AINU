@@ -2,6 +2,10 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Tejas",
+    "email": "tejasshrishekhar08@gmail.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-loader-spinner": "^6.1.6",
+    "react-spinners": "^0.17.0",
     "reactjs-popup": "^2.0.6"
   },
   "devDependencies": {

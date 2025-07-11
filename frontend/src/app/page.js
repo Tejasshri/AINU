@@ -1,3 +1,4 @@
+/* Developed by Tejas*/
 "use client";
 
 import Image from "next/image";
@@ -43,9 +44,7 @@ hands at AINU.`,
 ];
 
 export default function Home() {
-  const [isPopup, setIsPopup] = useState(true);
-
-  console.log(isPopup, "isopup")
+  const [isPopup, setIsPopup] = useState(false);
 
   return (
     <NextContext.Provider value={{ isPopup, setIsPopup }}>
@@ -66,3 +65,6 @@ export default function Home() {
     </NextContext.Provider>
   );
 }
+
+
+/* Developed by Tejas*/
