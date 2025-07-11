@@ -4,6 +4,6 @@ const urls = [
     "https://ainu.onrender.com"
 ]
 
-const webUrl = urls[1] ;
+const webUrl = urls[2] ;
 
 export default webUrl;
